@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class menuPrincipal {
 
     Scanner lector; //Creamos el primer Scanner para seleccionar este menu
+    int vector[] = new int[1];
+    int vectorTres[] = new int[4];
 
     public menuPrincipal() {
         menu();
@@ -47,30 +49,34 @@ public class menuPrincipal {
         }
     }
 
-    private void usuarios() {
+    private void usuarios() {  //Creamos el siguiente menu
         System.out.println("************************************************");
         System.out.println("1.Ingresar Usuarios");
         System.out.println("2.Mostrar Usuarios Ascendente");
         System.out.println("3.Mostrar Usuarios Descendente");
         System.out.println("4.Menu principal");
+        System.out.println("");
+        System.out.println("Ingrese una opcion:");
 
         lector = new Scanner(System.in);
         int usuario;
         usuario = lector.nextInt();
-        String vectorUsuario[] = new String[4];
+        String[] vectorUsuario = new String[5]; //Asignamos nuestro vector con 5 espacios 
         String usu;
 
         switch (usuario) {
-            case 1:
-                for (int i = 0; i <= 5; i++) {
+            case 1: //En el primer case debe ingresar los usuarios
+                for (int i = 0; i < vectorUsuario.length; i++) { //utilzamos un for para que el codigo sea mas compact0
                     System.out.println("Ingresar usuario:");
-                    usu = lector.next();
+                    usu = lector.next(); //igualamos el dato string usu para que sea leido por el lector
                     vectorUsuario[i] = usu;
-                    if (i > 0) {
-                        for (int j = 0; j < i; j++) {
+                    if (i > 0) { //El primer usuario nunca por primera ves podra ser el repetido
+                        for (int j = 0; j < i; j++) { //creamos un for para que verifique los datos anteriormente asiganados y comparados con los demas
                             if (vectorUsuario[j].equals(vectorUsuario[i])) {
                                 System.out.println("Error; ingresar otro usuario");
-                                vectorUsuario[i] = usu;
+                                String us;
+                                us = lector.next(); //una nueva variable us sera la que sustituya al usuario repetido anteriormente
+                                vectorUsuario[i] = us;
                             }
                         }
                     }
@@ -78,29 +84,134 @@ public class menuPrincipal {
                 usuarios();
                 break;
             case 2:
+                /*  for (int i = 0; i < vectorUsuario.length; i++) {
+                    for (int j = 0; j < vectorUsuario.length && i!=j; j++) {
+                        if (vectorUsuario[i].compareToIgnoreCase(vectorUsuario[j])<0) {
+                            String aux = vectorUsuario[j];
+                            vectorUsuario[j] = vectorUsuario[j + 1];
+                            vectorUsuario[j + 1] = aux;
+                        }
+                    }
+                }
 
+                  for(int n=0;n<vectorUsuario.length;n++){
+                    System.out.println(n+vectorUsuario[n]);
+                }*/
                 break;
             case 3:
-
+                System.out.println("3");
                 break;
             case 4:
                 menu();
                 break;
             default:
+                System.out.println("Ingrese opcion valida");
                 usuarios();
         }
     }
 
     private void contadorDeDigitos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("************************************************");
+        System.out.println("1.Ingresar numero");
+        System.out.println("2.Mostrar numero de digitos");
+        System.out.println("4.Menu principal");
+        System.out.println("");
+        System.out.println("Ingrese una opcion:");
+
+        Scanner entrada = new Scanner(System.in);
+        int digito;
+        digito = lector.nextInt();
+
+        int numero1;
+
+        switch (digito) {
+            case 1:
+                System.out.println("Ingrese un numero:");
+                numero1 = entrada.nextInt();
+                vector[0] = numero1;
+                if ((numero1 < 0) || (numero1 > 100000)) {
+                    System.out.println("Numero invalido, Ingrese otro numero:");
+                    int numero2 = entrada.nextInt();
+                    vector[0] = numero2;
+                }
+                contadorDeDigitos();
+                break;
+            case 2:
+                int n = 1;
+                int t = 0;
+                while (n < vector[0]) {
+                    if ((vector[0] / n) > 0) {
+                        t = t + 1;
+                        n = n * 10;
+                    }
+                }
+                System.out.println("No. de Digitos:" + t);
+                contadorDeDigitos();
+                break;
+            case 4:
+                menu();
+                break;
+            default:
+                System.out.println("Ingrese opcion valida");
+            /*    contadorDeDigitos();*/
+        }
     }
 
     private void tresNumero() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("************************************************");
+        System.out.println("1.Ingresar numeros");
+        System.out.println("2.Mostrar ordenados");
+        System.out.println("4.Menu principal");
+
+        int tres;
+        tres = lector.nextInt();
+        int numeros;
+
+        switch (tres) {
+            case 1:
+                System.out.println("************************************************");
+                System.out.println("Ingrese 3 numeros");
+
+                for (int i = 1; i < vectorTres.length; i++) {
+                    numeros = lector.nextInt();
+                    vectorTres[i] = numeros;
+                }
+                tresNumero();
+                break;
+            case 2:
+                System.out.println("************************************************");
+                System.out.println("Numero ordenado de mayor a menor:");
+
+                int i;
+                int j;
+                int aux;
+
+                for (i = 1; i < vectorTres.length; i++) {
+                    j = i;
+                    aux = vectorTres[i];
+                    while (i > 0 && aux < vectorTres[j - 1]) {
+                        vectorTres[j] = vectorTres[j - 1];
+                        j--;
+                    }
+                    vectorTres[j]=aux;
+                }
+
+                System.out.println(vectorTres[3]);
+                System.out.println(vectorTres[2]);
+                System.out.println(vectorTres[1]);
+                tresNumero();
+                break;
+            case 4:
+                menu();
+                break;
+            default:
+                System.out.println("Numero invalido");
+                tresNumero();
+        }
     }
 
     private void calcularPromedio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
 }
