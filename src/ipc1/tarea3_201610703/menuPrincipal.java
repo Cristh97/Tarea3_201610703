@@ -193,7 +193,7 @@ public class menuPrincipal {
                         vectorTres[j] = vectorTres[j - 1];
                         j--;
                     }
-                    vectorTres[j]=aux;
+                    vectorTres[j] = aux;
                 }
 
                 System.out.println(vectorTres[3]);
@@ -211,7 +211,137 @@ public class menuPrincipal {
     }
 
     private void calcularPromedio() {
-       
+        System.out.println("************************************************");
+        int a[] = new int[6];
+        int b[] = new int[7];
+        int c[] = new int[7];
+        int d[] = new int[7];
+        int e[] = new int[7];
+        int f[] = new int[7];
+        int a1, b1, c1, d1, e1, f1;
+
+        System.out.println("Ingrese el Id del estudiante, seguido de sus 4 notas:");
+        for (int a2 = 0; a2 < 5; a2++) {
+            a1 = lector.nextInt();
+            a[a2] = a1;
+        }
+
+        System.out.println("Ingrese el Id del estudiante, seguido de sus 4 notas:");
+        for (int b2 = 0; b2 < 5; b2++) {
+            b1 = lector.nextInt();
+            b[b2] = b1;
+        }
+
+        System.out.println("Ingrese el Id del estudiante, seguido de sus 4 notas:");
+        for (int c2 = 0; c2 < 5; c2++) {
+            c1 = lector.nextInt();
+            c[c2] = c1;
+        }
+
+        System.out.println("Ingrese el Id del estudiante, seguido de sus 4 notas:");
+        for (int d2 = 0; d2 < 5; d2++) {
+            d1 = lector.nextInt();
+            d[d2] = d1;
+        }
+
+        System.out.println("Ingrese el Id del estudiante, seguido de sus 4 notas:");
+        for (int e2 = 0; e2 < 5; e2++) {
+            e1 = lector.nextInt();
+            e[e2] = e1;
+        }
+
+        System.out.println("Ingrese el Id del estudiante, seguido de sus 4 notas:");
+        for (int f2 = 0; f2 < 5; f2++) {
+            f1 = lector.nextInt();
+            f[f2] = f1;
+        }
+
+        System.out.print(a[0]);
+        System.out.print(" ");
+        System.out.print(a[1]);
+        System.out.print(" ");
+        System.out.print(a[2]);
+        System.out.print(" ");
+        System.out.print(a[3]);
+        System.out.print(" ");
+        System.out.print(a[4]);
+        System.out.print(" ");
+        int a3 = (a[1] + a[2] + a[3] + a[4]) / 4;
+        System.out.print(a3);
+        System.out.println("");
+
+        System.out.print(b[0]);
+        System.out.print(" ");
+        System.out.print(b[1]);
+        System.out.print(" ");
+        System.out.print(b[2]);
+        System.out.print(" ");
+        System.out.print(b[3]);
+        System.out.print(" ");
+        System.out.print(b[4]);
+        System.out.print(" ");
+        int b3 = (b[1] + b[2] + b[3] + b[4]) / 4;
+        System.out.print(b3);
+        System.out.println("");
+
+        System.out.print(c[0]);
+        System.out.print(" ");
+        System.out.print(c[1]);
+        System.out.print(" ");
+        System.out.print(c[2]);
+        System.out.print(" ");
+        System.out.print(c[3]);
+        System.out.print(" ");
+        System.out.print(c[4]);
+        System.out.print(" ");
+        int c3 = (c[1] + c[2] + c[3] + c[4]) / 4;
+        System.out.print(c3);
+        System.out.println("");
+
+        System.out.print(d[0]);
+        System.out.print(" ");
+        System.out.print(d[1]);
+        System.out.print(" ");
+        System.out.print(d[2]);
+        System.out.print(" ");
+        System.out.print(d[3]);
+        System.out.print(" ");
+        System.out.print(d[4]);
+        System.out.print(" ");
+        int d3 = (d[1] + d[2] + d[3] + d[4]) / 4;
+        System.out.print(d3);
+        System.out.println("");
+
+        System.out.print(e[0]);
+        System.out.print(" ");
+        System.out.print(e[1]);
+        System.out.print(" ");
+        System.out.print(e[2]);
+        System.out.print(" ");
+        System.out.print(e[3]);
+        System.out.print(" ");
+        System.out.print(e[4]);
+        System.out.print(" ");
+        int e3 = (e[1] + e[2] + e[3] + e[4]) / 4;
+        System.out.print(e3);
+        System.out.println("");
+
+        System.out.print(f[0]);
+        System.out.print(" ");
+        System.out.print(f[1]);
+        System.out.print(" ");
+        System.out.print(f[2]);
+        System.out.print(" ");
+        System.out.print(f[3]);
+        System.out.print(" ");
+        System.out.print(f[4]);
+        System.out.print(" ");
+        int f3 = (f[1] + f[2] + f[3] + f[4]) / 4;
+        System.out.print(f3);
+        System.out.println("");
+        
+        menu();
+
     }
 
 }
